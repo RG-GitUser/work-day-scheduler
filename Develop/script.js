@@ -21,10 +21,8 @@ var timeDisplayEl = $('#time-display');
 var hourNow = dayjs().hour();
 
 function displayTime() {
-  var currentTime = dayjs().format('MMM DD, YYYY HH:mm');
-  timeDisplayEl.text(currentTime);
-  hourNow = dayjs().hour();
-  setClasses();
+  var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
+  timeDisplayEl.text(rightNow);
 }
 
 
