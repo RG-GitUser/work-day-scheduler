@@ -14,7 +14,30 @@ var timeBlocks = [
   {
     id: "hour-12",
     hour: 12
+  },
+  {
+    id: "hour-13",
+    hour: 13
+  },
+  {
+    id: "hour-14",
+    hour: 14
+  },
+  {
+    id: "hour-15",
+    hour: 15
+  },
+  {
+    id: "hour-16",
+    hour: 16
+  },
+  {
+    id: "hour-17",
+    hour: 17
   }
+
+
+  
 ]
 
 var timeDisplayEl = $('#time-display');
@@ -76,4 +99,8 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+
+  displayTime();
+setInterval(displayTime, 1000);
+
 });
