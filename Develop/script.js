@@ -38,10 +38,13 @@ var timeBlocks = [
     id: "hour-17",
     hour: 17
   }
-
-
   
 ]
+
+
+
+
+//time display
 
 var timeDisplayEl = $('#time-display');
 var hourNow = dayjs().hour();
@@ -57,15 +60,15 @@ function setClasses(){
   for (var i = 0; i < timeBlocks.length; i++) {
     var currentBlock = timeBlocks[i];
 
-    var className = "present"
+    var className = "present"  
 
     if(hourNow < currentBlock.hour){
       className = "future";
-    }else if(hourNow > currentBlock.hour){
+    }else if(hourNow > currentBlock.hour){ 
       className = "past";
     }
 
-    $("#"+currentBlock.id).removeClass("past present future");
+    $("#"+currentBlock.id).removeClass("past present future"); 
     $("#"+currentBlock.id).addClass(className);
 
     var task = localStorage.getItem(currentBlock.id) || "";
@@ -76,43 +79,44 @@ function setClasses(){
 
 
 
-
-
-function readTasksFromStorage() {
-  var tasks = localStorage.getItem('tasks');
-  if (tasks) {
-    projects = JSON.parse(tasks);
-  } else {
-    tasks = [];
-  }
-  return tasks;
-}
-
-
-// setClasses();
-
-// var hour = $(this).data("hour-9");
-
-// localstorage.setItem(hour,"hour-9"); 
-
-
-// localStorage.saveTask = " ";
-// document.getElementById("hour-9", "hour-10", "hour-11", "hour-12", "hour-13", "hour-14","hour-15", "hour-16", "hour-17").innerHTML = localStorage.saveTask;
-// localStorage.removeItem("saveTask");
-
-// if (localStorage) {
-
-// document.getElementByClassName('btn saveBtn col-2 col-md-1').addEventListener('save', function() {
-
-//   localStorage.setItem('saveTask', saveTask);
-// });
-
-// }
-
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+
+
+const saveInput = document.querySelector('.row time-block present');
+
+const text = document.querySelector('.text');
+
+const button = document.querySelector('.button');
+
+saveInput.addEventListener('input', letter => {
+  console.log(letter)
+  text.textContent = letter.target.value
+})
+
+
+
+
+
+
+
+ $(function save() {
+  var new_save = document.getElementById('hour-9').value;
+
+  if(localStorage.getItem('save')){
+    localStorage.setItem('save', '[]');
+   }
+   })
+
+   var old_save = JSON.parse(localStorage.getItem('save'));
+   old_save.push(new_save);
+
+   localStorage.setItem('save', JSON.stringify(old_save));
+
+
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -135,4 +139,4 @@ $(function () {
 displayTime();
 setInterval(displayTime, 1000);
 
-});
+
