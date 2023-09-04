@@ -84,7 +84,7 @@ function setClasses(){
 // in the html.
 
 
-const saveInput = document.querySelector('.row time-block present');
+const saveInput = document.querySelector('.present');
 
 const text = document.querySelector('.text');
 
@@ -102,7 +102,7 @@ saveInput.addEventListener('input', letter => {
 
 
  $(function save() {
-  var new_save = document.getElementById('hour-9').value;
+  var new_save = document.getElementById('present').value;
 
   if(localStorage.getItem('save')){
     localStorage.setItem('save', '[]');
