@@ -73,20 +73,41 @@ function setClasses(){
   }
 }
 
-setClasses();
 
 
 
-localStorage.saveTask = " ";
-document.getElementById("hour-9", "hour-10", "hour-11", "hour-12", "hour-13", "hour-14","hour-15", "hour-16", "hour-17").innerHTML = localStorage.saveTask;
-localStorage.removeItem("saveTask");
-
-document.getElementByClass('btn saveBtn col-2 col-md-1').addEventListener('save', function() {
-
-  localStorage.setItem('saveTask', saveTask);
-});
 
 
+function readTasksFromStorage() {
+  var tasks = localStorage.getItem('tasks');
+  if (tasks) {
+    projects = JSON.parse(tasks);
+  } else {
+    tasks = [];
+  }
+  return tasks;
+}
+
+
+// setClasses();
+
+// var hour = $(this).data("hour-9");
+
+// localstorage.setItem(hour,"hour-9"); 
+
+
+// localStorage.saveTask = " ";
+// document.getElementById("hour-9", "hour-10", "hour-11", "hour-12", "hour-13", "hour-14","hour-15", "hour-16", "hour-17").innerHTML = localStorage.saveTask;
+// localStorage.removeItem("saveTask");
+
+// if (localStorage) {
+
+// document.getElementByClassName('btn saveBtn col-2 col-md-1').addEventListener('save', function() {
+
+//   localStorage.setItem('saveTask', saveTask);
+// });
+
+// }
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
@@ -111,7 +132,7 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 
-  displayTime();
+displayTime();
 setInterval(displayTime, 1000);
 
 });
