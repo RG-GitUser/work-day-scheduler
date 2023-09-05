@@ -22,7 +22,7 @@ As a user, you'll want to save all of your tasks in each timeblock to keep track
 
 Screenshot sample of code used: 
 
-![Alt text]Assets\timeblock.jpg
+![Alt text] Assets\timeblock.jpg
 
 
 ## Credits
