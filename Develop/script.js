@@ -47,8 +47,8 @@ var timeBlocks = [
 //time display
 
 var timeDisplayEl = $('#time-display');
-// var hourNow = dayjs().hour();
-var hourNow = "12"
+var hourNow = dayjs().hour();
+
 
 function displayTime() {
   var rightNow = dayjs().format('MMM DD, YYYY [at] hh:mm:ss a');
@@ -116,6 +116,8 @@ var textvalue = textarea[0]
 console.log('timeBlock', textvalue);
 console.log('test');
 localStorage.setItem('save', textvalue.value);
+
+
 if (localStorage.getItem('save')) {
   }
 }
