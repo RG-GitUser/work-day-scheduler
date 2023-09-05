@@ -84,16 +84,16 @@ function setClasses(){
 // in the html.
 
 
-const saveInput = document.querySelector('.present');
+// const saveInput = document.querySelector('.present');
 
-const text = document.querySelector('.text');
+// const text = document.querySelector('.text');
 
-const button = document.querySelector('.button');
+// const button = document.querySelector('.button');
 
-saveInput.addEventListener('input', letter => {
-  console.log(letter)
-  text.textContent = letter.target.value
-})
+// saveInput.addEventListener('input', letter => {
+//   console.log(letter)
+//   text.textContent = letter.target.value
+// })
 
 
 
@@ -107,7 +107,7 @@ saveInput.addEventListener('input', letter => {
    }
 
    var old_save = JSON.parse(localStorage.getItem('save')) || [];
-  //  old_save.push(new_save);
+
 
    localStorage.setItem('save', JSON.stringify(old_save));
 
@@ -117,7 +117,17 @@ saveInput.addEventListener('input', letter => {
     console.log("Button pressed")
   })
 
-  // TODO: Add a listener for click events on the save button. This code should
+ 
+
+  const taskArray = []
+  localStorage.setItem('task', JSON.stringify(taskArray))
+
+ const userTask = JSON.parse(localStorage.getItem('task'));
+ console.log(userTask)
+
+ 
+
+   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
