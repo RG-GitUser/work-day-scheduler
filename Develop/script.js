@@ -98,24 +98,24 @@ saveInput.addEventListener('input', letter => {
 
 
 
-
-
-
- $(function save() {
+ function save() {
   var new_save = document.getElementById('present').value;
 
   if(localStorage.getItem('save')){
     localStorage.setItem('save', '[]');
    }
-   })
+   }
 
-   var old_save = JSON.parse(localStorage.getItem('save'));
-   old_save.push(new_save);
+   var old_save = JSON.parse(localStorage.getItem('save')) || [];
+  //  old_save.push(new_save);
 
    localStorage.setItem('save', JSON.stringify(old_save));
 
 
-
+   $('.saveBtn').on('click',function() {
+    console.log($(this).siblings('.description').val())
+    console.log("Button pressed")
+  })
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
